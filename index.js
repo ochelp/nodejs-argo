@@ -21,7 +21,19 @@ const ARGO_AUTH = process.env.ARGO_AUTH || 'eyJhIjoiOTk4YzJmYjJlNDEzYTVhZmExYzJl
 const ARGO_PORT = process.env.ARGO_PORT || 8001;            // 固定隧道端口,使用token需在cloudflare后台设置和这里一致
 const CFIP = process.env.CFIP || 'spring.io';            // 节点优选域名或优选ip  
 const CFPORT = process.env.CFPORT || 443;                   // 节点优选域名或优选ip对应的端口
-const NAME = process.env.NAME || '';                        // 节点名称
+const S5_PORT = process.env.S5_PORT || '';                   // socks5端口，支持多端口的可以填写，否则留空
+const TUIC_PORT = process.env.TUIC_PORT || '';               // tuic端口，支持多端口的可以填写，否则留空
+const HY2_PORT = process.env.HY2_PORT || '8080';                 // hy2端口，支持多端口的可以填写，否则留空
+const ANYTLS_PORT = process.env.ANYTLS_PORT || '';           // AnyTLS端口，支持多端口的可以填写，否则留空
+const REALITY_PORT = process.env.REALITY_PORT || '8080';         // reality端口，支持多端口的可以填写，否则留空
+const ANYREALITY_PORT = process.env.ANYREALITY_PORT || '';   // Anyr-eality端口，支持多端口的可以填写，否则留空
+const CFIP = process.env.CFIP || 'spring.io';             // 优选域名或优选IP
+const CFPORT = process.env.CFPORT || 443;                    // 优选域名或优选IP对应端口
+const PORT = process.env.PORT || 3000;                       // http订阅端口    
+const NAME = process.env.NAME || '';                         // 节点名称
+const CHAT_ID = process.env.CHAT_ID || '';                   // Telegram chat_id  两个变量不全不推送节点到TG 
+const BOT_TOKEN = process.env.BOT_TOKEN || '';               // Telegram bot_token 两个变量不全不推送节点到TG 
+const DISABLE_ARGO = process.env.DISABLE_ARGO || false;      // 设置为 true 时禁用argo,false开启
 
 // 创建运行文件夹
 if (!fs.existsSync(FILE_PATH)) {
